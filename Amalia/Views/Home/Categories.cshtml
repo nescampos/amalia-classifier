@@ -1,0 +1,41 @@
+﻿@model Amalia.Models.CategoriesViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Your categories";
+}
+
+<h2>Manage the categories to classify your emails.</h2>
+
+<div class="row">
+    <div class="col-md-8">
+
+        <h3>Categories</h3>
+        <table class="table table-responsive table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach(var category in Model.Categories)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <th>@Html.ActionLink("Details", "CategoryDetail",new {id = category.Id})</th>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <div class="col-md-4">
+
+        <h3>Create category</h3>
+        @using(Html.BeginForm())
+        {
+            <input type="text" name="newCategory" class="form-control" /> <br />
+            <input type="submit" value="Create" class="btn-primary" />
+        }
+    </div>
+</div>

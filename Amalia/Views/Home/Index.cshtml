@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Amalia</h1>
+    <p class="lead">Amalia is a service that allows using Artificial Intelligence (thanks to <a href="https://www.cohere.ai" target="_blank">Cohere.ai</a>) to analyze the incoming emails of your customers and classify into different categories.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Monitoring</h2>
+        <p>
+            Review the incoming emails with messages for you/your company.
+        </p>
+        <p>@Html.ActionLink("Check messages", "ListMessages", "Home", null, new { @class = "btn btn-primary btn-lg px-4 me-sm-3" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Managing</h2>
+        <p>
+            Manage the categories that will be automatically assigned to monitor your emails
+        </p>
+        <p>@Html.ActionLink("Categories", "Categories", "Home", null, new { @class = "btn btn-secondary btn-lg px-4 me-sm-3" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Do you want to use AI for classifying your emails?</h2>
+        <p>Register and use it.</p>
+
+        <p> <a asp-area="Identity" asp-page="/Account/Register" target="_blank" class="btn btn-success btn-lg px-4">Get your account</a></p>
+    </div>
+</div>

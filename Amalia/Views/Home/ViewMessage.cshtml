@@ -1,0 +1,33 @@
+﻿@model Amalia.Models.ViewMessageModel
+@{
+    ViewBag.Title = "Message";
+}
+
+<h2>@Model.Message.Title</h2>
+
+<div class="row">
+    <div class="col-md-7 align-content-center">
+
+        <h3>Details</h3>
+        <table>
+            <tr>
+                <td>Text</td>
+                <th><b>@Model.Message.Message</b></th>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <th><b>@(Model.Message.CategoryId.HasValue? Model.Message.Category.Name : string.Empty)</th>
+            </tr>
+            <tr>
+                <td>Created At</td>
+                <th><b>@Model.Message.CreatedAt</b></th>
+            </tr>
+            <tr>
+                <td>User</td>
+                <th><b>@Model.Message.From</b></th>
+            </tr>
+        </table>
+        <br />
+        @Html.ActionLink("Back to list", "ListMessages", "Home", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
